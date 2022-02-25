@@ -1,0 +1,23 @@
+.character-page {
+  max-width: 463px;
+  display: block;
+  margin: 0 auto;
+  padding-bottom: 50%;
+
+  &__add-more {
+    margin: 16px auto;
+    display: block;
+  }
+}
+
+footer {
+  font-size: 0.9rem;
+  text-align: center;
+  margin: 32px 0;
+  color: #000000a6;
+}
+
+app-spinner {
+  display: flex;
+  justify-content: center;
+}
