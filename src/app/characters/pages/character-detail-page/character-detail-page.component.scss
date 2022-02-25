@@ -1,18 +1,27 @@
-.character-detail {
+.character-detail-page {
   padding: 32px;
-  &__card {
-    max-width: 420px;
-    margin-top: 16px;
-  }
+  max-width: 1200px;
 
-  &__content {
+  &__films {
     display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 480px;
+    padding: 24px 0;
   }
+}
 
-  &__avatar {
-    width: 54px;
-    height: 54px;
-    border-radius: 50%;
-    margin-right: 16px;
+.film {
+  display: flex;
+  gap: 8px;
+
+  &__thumbnail {
+    width: 110px;
+    height: 80px;
+    object-fit: cover;
+  }
+  &__title {
+    font-size: 1.1rem;
+    font-weight: bold;
   }
 }

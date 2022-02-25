@@ -1,6 +1,15 @@
-<button (click)="navigateToHome()">Volver</button>
-<app-spinner></app-spinner>
-<h1>{{characterDetail.name}}</h1>
-<div *ngFor="let film of characterDetail.films">
-    <span>{{film.title}}</span>
+<div class="character-detail-page" animFadeIn>
+    <button (click)="navigateToHome()">Volver</button>
+    <app-spinner></app-spinner>
+    <h1>{{characterDetail.name}}</h1>
+    <p>Aparece en {{characterDetail?.films?.length}} películas</p>
+    <div class="character-detail-page__films">
+        <div class="film" *ngFor="let film of characterDetail.films" animFadeIn>
+            <img class="film__thumbnail" src="assets/film.jpg"/>
+            <div>
+                <span class="film__title">{{film.title}}</span>
+                <p>{{film.opening_crawl}}</p>
+            </div>
+        </div>
+    </div>
 </div>

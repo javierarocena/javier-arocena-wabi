@@ -4,6 +4,7 @@ export interface Character {
   eye_color: string;
   films: {
     title: string;
+    opening_crawl: string;
   }[];
   gender: string;
   height: string;
