@@ -1,0 +1,16 @@
+[animFadeIn] {
+  animation: 300ms ease-in-out animFadeIn both;
+}
+
+[animDelayFadeIn] {
+  animation: 440ms 140ms ease-in-out animFadeIn both;
+}
+
+@keyframes animFadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,8 @@
+<div class="characters-list">
+  <div
+    *ngFor="let character of characters"
+    (click)="onCharacterSelect(character)"
+  >
+    <app-character-item [character]="character"></app-character-item>
+  </div>
+</div>

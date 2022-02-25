@@ -1,0 +1,7 @@
+<h1>Characters</h1>
+<app-characters-list
+  [characters]="characters"
+  (onCharacterSelect)="onCharacterSelect($event)"
+></app-characters-list>
+<button (click)="loadMore()">load more</button>
+<app-spinner></app-spinner>
