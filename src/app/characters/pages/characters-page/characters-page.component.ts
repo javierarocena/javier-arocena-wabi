@@ -21,13 +21,12 @@ export class CharactersPageComponent implements OnInit {
     this.loadMore();
   }
 
-  loadMore() {
+  async loadMore() {
     this.currentPage++;
-    this.charactersService
-      .getAll({ page: this.currentPage })
-      .subscribe(({ results: characters }) =>
-        this.onLoadCharacters(characters)
-      );
+    const { results: characters } = await this.charactersService.getAll({
+      page: this.currentPage,
+    });
+    this.onLoadCharacters(characters);
   }
 
   private onLoadCharacters(characters: any[]) {

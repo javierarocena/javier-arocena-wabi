@@ -1,3 +1,6 @@
 <button (click)="navigateToHome()">Volver</button>
 <app-spinner></app-spinner>
 <h1>{{characterDetail.name}}</h1>
+<div *ngFor="let film of characterDetail.films">
+    <span>{{film.title}}</span>
+</div>

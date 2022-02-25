@@ -22,11 +22,14 @@ export class characterDetailPageComponent implements OnInit {
   }
 
   private loadCharacterDetail() {
-    this.activatedRoute.params.subscribe(({ id }) => {
-      this.charactersService.getById(id).subscribe((character) => {
-        this.characterDetail = character;
-      });
-    });
+    this.activatedRoute.params.subscribe(({ id }) => this.loadCharacter(id));
+  }
+
+  private async loadCharacter(id: number) {
+    this.characterDetail = await this.charactersService.getById(id);
+    this.characterDetail.films = await this.charactersService.getCharacterFilms(
+      this.characterDetail
+    );
   }
 
   navigateToHome() {
