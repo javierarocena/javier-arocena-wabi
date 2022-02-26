@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CharactersProvider } from './characters.provider';
 import { SharedModule } from 'src/shared/shared.module';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
 const PAGES = [CharactersPageComponent, characterDetailPageComponent];
 
@@ -19,6 +20,7 @@ const COMPONENTS = [CharactersListComponent, CharacterItemComponent];
   imports: [
     CommonModule,
     SharedModule,
+    InfiniteScrollModule,
     FormsModule,
     ReactiveFormsModule,
     CharactersRoutingModule,

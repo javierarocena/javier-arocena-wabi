@@ -12,7 +12,14 @@ export class CharactersListComponent {
   @Output('onCharacterSelect') characterSelectEmitter: EventEmitter<Character> =
     new EventEmitter();
 
+  @Output('onScrollEnding') scrollEndingEmitter: EventEmitter<void> =
+    new EventEmitter();
+
   onCharacterSelect(character: Character) {
     this.characterSelectEmitter.emit(character);
+  }
+
+  onScroll() {
+    this.scrollEndingEmitter.emit();
   }
 }
