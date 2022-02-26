@@ -1,7 +1,10 @@
 <div class="character-page">
-  <h1>Personajes</h1>
+  <header>
+    <h1 animFadeIn>Star Wars Wiki</h1>
+    <p *ngIf="countAll !== undefined" animFadeIn>Hay {{countAll}} personajes</p>
+  </header>
   <app-characters-list [characters]="characters" (onCharacterSelect)="onCharacterSelect($event)" (onScrollEnding)="loadMore()"></app-characters-list>
-  <button class="character-page__add-more" animFadeIn *ngIf="!loadingService.isLoading" (click)="loadMore()">Cargar más</button>
+  <button class="character-page__add-more" animFadeIn *ngIf="!loadingService.isLoading && !isAllLoaded" (click)="loadMore()">Cargar más</button>
   <app-spinner></app-spinner>
   <footer animDelayFadeIn>Prueba técnica hecha con ❤ para Wabi</footer>
 </div>
