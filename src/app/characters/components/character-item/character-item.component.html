@@ -1,9 +1,12 @@
 <div class="character-item" animFadeIn>
   <img class="character-item__thumbnail" src="assets/user.jpg">
-  <div>
+  <div class="character-item__info">
     <span class="character-item__title">{{ character?.name }}</span>
     <div>Género: {{character?.gender}}</div>
     <div>Altura: {{character?.height}}m</div>
     <div *ngIf="character?.films?.length">Películas {{character?.films?.length}}</div>
+  </div>
+  <div class="character-item__aside">
+    <img class="character-item__navigation-icon" animSlideLeft src="assets/icons/right-arrow.svg">
   </div>
 </div>
