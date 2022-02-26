@@ -1,6 +1,8 @@
 <div class="characters-list" infiniteScroll [infiniteScrollDistance]="2" [infiniteScrollThrottle]="50"
   (scrolled)="onScroll()" [scrollWindow]="true">
-  <div *ngFor="let character of characters" (click)="onCharacterSelect(character)">
-    <app-character-item [character]="character"></app-character-item>
+  <div *ngFor="let character of characters"  (click)="onCharacterSelect(character)">
+    <div *inView animSlideLeftFast>
+      <app-character-item  [character]="character"></app-character-item>
+    </div>
   </div>
 </div>
