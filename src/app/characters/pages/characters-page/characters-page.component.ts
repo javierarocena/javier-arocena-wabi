@@ -12,6 +12,8 @@ import { LoadingService } from '../../../comunications/loadings.service';
 export class CharactersPageComponent implements OnInit {
   characters: Character[] = [];
   currentPage = 0;
+  isAllLoaded = false;
+  countAll: number | undefined;
 
   constructor(
     private charactersService: CharactersService,
@@ -24,14 +26,20 @@ export class CharactersPageComponent implements OnInit {
   }
 
   async loadMore() {
+    if (this.isAllLoaded) return;
     this.currentPage++;
-    const { results: characters } = await this.charactersService.getAll({
+    const opt = await this.charactersService.getAll({
       page: this.currentPage,
     });
-    this.onLoadCharacters(characters);
+    this.onLoadCharacters(opt);
   }
 
-  private onLoadCharacters(characters: any[]) {
+  private onLoadCharacters({ results: characters, count, next }: any) {
+    this.countAll = count;
+    if (!next) {
+      this.isAllLoaded = true;
+      return;
+    }
     this.characters = [...this.characters, ...characters];
   }
 
