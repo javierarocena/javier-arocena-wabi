@@ -6,6 +6,12 @@ export interface Character {
     title: string;
     opening_crawl: string;
   }[];
+  starships: {
+    title: string;
+  }[];
+  vehicles: {
+    title: string;
+  }[];
   gender: string;
   height: string;
   mass: string;

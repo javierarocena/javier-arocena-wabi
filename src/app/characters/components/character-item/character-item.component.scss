@@ -53,4 +53,19 @@
     transform: rotate(90deg);
     opacity: 0.5;
   }
+
+  &__tag {
+    background-color: #4a4a4a;
+    color: white;
+    padding: 2px 5px;
+    border-radius: 8px;
+    display: inline-block;
+    font-size: 0.8rem;
+    text-shadow: 0 0 9px black;
+  }
+}
+
+table {
+  font-size: 0.8rem;
+  padding: 8px 0;
 }

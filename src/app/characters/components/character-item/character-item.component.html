@@ -2,9 +2,21 @@
   <img class="character-item__thumbnail" src="assets/user.jpg">
   <div class="character-item__info">
     <span class="character-item__title">{{ character?.name }}</span>
-    <div>Género: {{character?.gender}}</div>
-    <div>Altura: {{character?.height}}m</div>
-    <div *ngIf="character?.films?.length">Películas {{character?.films?.length}}</div>
+    <span class="character-item__tag" *ngIf="character?.gender != 'n/a'">{{character?.gender}}</span>
+    <table>
+      <tr *ngIf="character?.films?.length">
+        <td>🎬 {{character?.films?.length}}</td>
+        <td>Películas</td>
+      </tr>
+      <tr *ngIf="character?.starships?.length">
+        <td>🚀 {{character?.starships?.length}}</td>
+        <td>Naves</td>
+      </tr>
+      <tr *ngIf="character?.vehicles?.length">
+        <td>🚚 {{character?.vehicles?.length}}</td>
+        <td>Vehículos</td>
+      </tr>
+    </table>
   </div>
   <div class="character-item__aside">
     <img class="character-item__navigation-icon" animSlideLeft src="assets/icons/right-arrow.svg">
