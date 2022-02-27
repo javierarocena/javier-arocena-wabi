@@ -2,6 +2,7 @@ import { Character } from '../../models/character.model';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CharactersService } from '../../characters.service';
+import { LoadingService } from '../../../comunications/loadings.service';
 
 @Component({
   selector: 'app-character-detail-page',
@@ -14,6 +15,7 @@ export class characterDetailPageComponent implements OnInit {
   constructor(
     private charactersService: CharactersService,
     private router: Router,
+    public loadingService: LoadingService,
     private activatedRoute: ActivatedRoute
   ) {}
 

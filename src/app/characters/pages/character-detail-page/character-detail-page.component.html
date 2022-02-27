@@ -1,15 +1,57 @@
 <div class="character-detail-page" animFadeIn>
-    <button (click)="navigateToHome()">Volver</button>
+    <button animSlideLeftFast (click)="navigateToHome()">Volver</button>
     <app-spinner></app-spinner>
-    <h1>{{characterDetail.name}}</h1>
-    <p>Aparece en {{characterDetail?.films?.length}} películas</p>
-    <div class="character-detail-page__films">
-        <div class="film" *ngFor="let film of characterDetail.films">
-            <div *ngIf="film.title" animFadeIn>
-                <img class="film__thumbnail" src="assets/film.jpg" />
-                <div>
-                    <span class="film__title">{{film.title}}</span>
-                    <p>{{film.opening_crawl}}</p>
+    <div *ngIf="!loadingService.isLoading" animFadeIn>
+        <h1>{{characterDetail.name}}</h1>
+        <div class="character-detail-page__info">
+            <div class="character-detail-page__info-data">
+                <table>
+                    <tr>
+                        <td class="note">Color ojos</td>
+                        <td>{{characterDetail?.eye_color}}</td>
+                    </tr>
+                    <tr>
+                        <td class="note">Género</td>
+                        <td>{{characterDetail?.gender}}</td>
+                    </tr>
+                    <tr>
+                        <td class="note">Altura</td>
+                        <td>{{characterDetail?.height}}</td>
+                    </tr>
+                    <tr>
+                        <td class="note">Peso</td>
+                        <td>{{characterDetail?.mass}}</td>
+                    </tr>
+                    <tr>
+                        <td class="note">Color de piel</td>
+                        <td>{{characterDetail?.skin_color}}</td>
+                    </tr>
+                    <tr>
+                        <td class="note">Películas</td>
+                        <td>{{characterDetail?.films?.length}}</td>
+                    </tr>
+                    <tr>
+                        <td class="note">Naves</td>
+                        <td>{{characterDetail?.starships?.length}}</td>
+                    </tr>
+                    <tr>
+                        <td class="note">Ve</td>
+                        <td>{{characterDetail?.vehicles?.length}}</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="character-detail-page__films-box">
+                <p>Aparece en {{characterDetail?.films?.length}} películas</p>
+                <div class="character-detail-page__films">
+                    <div class="film" *ngFor="let film of characterDetail.films">
+                        <div *ngIf="film.title" animFadeIn >
+                            <img class="film__thumbnail" src="assets/film.jpg" />
+                            <div>
+                                <span class="film__title">{{film.title}}</span>
+                                <p class="film__description">{{film.opening_crawl}}</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

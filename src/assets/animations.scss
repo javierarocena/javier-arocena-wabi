@@ -35,7 +35,7 @@
   100% {
     -webkit-transform: translateX(0) rotate(90deg);
     transform: translateX(0) rotate(90deg);
-    opacity: 0.4;
+    opacity: 0.6;
   }
 }
 @keyframes roll-in-left {
@@ -47,6 +47,6 @@
   100% {
     -webkit-transform: translateX(0) scale(1);
     transform: translateX(0) scale(1);
-    opacity: 0.4;
+    opacity: 0.6;
   }
 }
